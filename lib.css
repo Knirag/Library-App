@@ -1,90 +1,102 @@
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
 }
-*{
+
+* {
     margin: 0;
-    padding:0;
+    padding: 0;
     list-style: none;
-    text-decoration: none
+    text-decoration: none;
 }
-.sidebar{
+
+.sidebar {
     position: fixed;
-    left: -250;
+    left: -250px; /* Added "px" unit to the left property */
     width: 250px;
     height: 100%;
     background: #e8dac8;
 }
-.sidebar header{
+
+.sidebar header {
     font-size: 22px;
     color: white;
     text-align: center;
-    line-height: 10px;
+    line-height: 65px; /* Changed the line-height to match the links' line-height */
     background: #4d3b22;
     user-select: none;
 }
-.sidebar ul a{
+
+.sidebar ul a {
     display: block;
-    height: 100%;
+    height: 65px; /* Changed height to match the line-height in the header */
     width: 100%;
     line-height: 65px;
     color: white;
     padding-left: 40px;
-    box-sizing: bodrder-box;
-    border-top: 1px solid rgba(255,255,255,.1);
+    box-sizing: border-box; /* Fixed typo: "bodrder-box" to "border-box" */
+    border-top: 1px solid rgba(255, 255, 255, .1);
     border-bottom: 1px solid black;
     transition: .4s;
 }
-ul li:hover a{
-    padding-left: 50 px;
 
+ul li:hover a {
+    padding-left: 50px;
 }
-#check{
+
+#check {
     display: none;
 }
-label #btn,label #cancel{
+
+label#btn, label#cancel { /* Removed space between label and the ID selectors */
     position: absolute;
     cursor: pointer;
     background: #d6cdb4;
     border-radius: 3px;
 }
-label #btn{
+
+label#btn {
     left: 40px;
     top: 25px;
     font-size: 35px;
     color: white;
-    padding: 6px 12px
+    padding: 6px 12px;
 }
-label #cancel{
+
+label#cancel {
     z-index: 1111;
-    left:159px;
+    left: 159px;
     top: 17px;
     font-size: 30px;
     color: #f7f9fa;
     padding: 4px 9px;
     transition: all .5s ease;
 }
-label #nav-open, 
-label #nav-close{
+
+label#nav-open,
+label#nav-close {
     position: fixed;
 }
 
-#check checked ~.sidebar{
+#check:checked ~ .sidebar {
     left: 0;
 }
-#check:checked ~ label #btn{
+
+#check:checked ~ label#btn { /* Changed the ID selector for consistency */
     left: 250px;
     opacity: 0;
     pointer-events: none;
 }
-#check:checked ~ label #cancel{
+
+#check:checked ~ label#cancel { /* Changed the ID selector for consistency */
     left: -195px;
     opacity: 0;
     pointer-events: none;
 }
-section{
-    background-color: #faf1e6   no repeat;
+
+section {
+    background-color: #faf1e6; /* Added a semicolon at the end */
+    background-repeat: no-repeat; /* Fixed typo: "no repeat" to "no-repeat" */
     background-position: center;
     background-size: cover;
     height: 100vh;
-
 }

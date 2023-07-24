@@ -9,16 +9,59 @@ body {
 }
 .sidebar{
     position: fixed;
-    left: 0;
-    width:250px;
+    left: -250;
+    width: 250px;
     height: 100%;
     background: #e8dac8;
 }
 .sidebar header{
     font-size: 22px;
     color: white;
-    text-align:center;
+    text-align: center;
     line-height: 10px;
     background: #4d3b22;
     user-select: none;
+}
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: bodrder-box;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+}
+ul li:hover a{
+    padding-left: 50px;
+
+}
+#check{
+    display: none;
+}
+label #btn,label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: #d6cdb4;
+    border-radius: 3px;
+}
+label #btn{
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px
+}
+label #cancel{
+    z-index: 1111;
+    left:159px;
+    top: 17px;
+    font-size: 30px;
+    color: #f7f9fa;
+    padding: 4px 9px;
+}
+#check checked ~.sidebar{
+    left:
 }

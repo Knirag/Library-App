@@ -27,5 +27,9 @@ const books = [
     },
   ];
   
+  /*  <input type="checkbox" id="check">
+    <label for="check"></label>
+    <i class="fas fa-bars" id="btnOpen"></i>
+    <i class="fas fa-times" id="btnClose"></i> */
 
   

@@ -42,12 +42,12 @@ body {
 ul li:hover a {
     padding-left: 50px;
 }
-
+/*
 #check {
     display: none;
 }
 
-label#btn, label#cancel { /* Removed space between label and the ID selectors */
+label#btn, label#cancel { 
     position: absolute;
     cursor: pointer;
     background: #d6cdb4;
@@ -81,22 +81,23 @@ label#nav-close {
     left: 0;
 }
 
-#check:checked ~ label#btn { /* Changed the ID selector for consistency */
+#check:checked ~ label#btn { 
     left: 250px;
     opacity: 0;
     pointer-events: none;
 }
 
-#check:checked ~ label#cancel { /* Changed the ID selector for consistency */
+#check:checked ~ label#cancel { 
     left: -195px;
     opacity: 0;
     pointer-events: none;
 }
 
 section {
-    background-color: #faf1e6; /* Added a semicolon at the end */
-    background-repeat: no-repeat; /* Fixed typo: "no repeat" to "no-repeat" */
+    background-color: #faf1e6; 
+    background-repeat: no-repeat; 
     background-position: center;
     background-size: cover;
     height: 100vh;
 }
+*/

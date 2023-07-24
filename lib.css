@@ -12,6 +12,13 @@ body {
     left: 0;
     width:250px;
     height: 100%;
+    background: #e8dac8;
+}
+.sidebar header{
+    font-size: 22px;
+    color: white;
+    text-align:center;
+    line-height: 10px;
     background: #4d3b22;
-
+    user-select: none;
 }

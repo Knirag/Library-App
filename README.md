@@ -5,6 +5,7 @@ Book List:
 *Gulliver's Travels- 1726 - Jonathan Swift 
 *Black Beauty - 1877 - Anna Sewell
 *A Tale of Two Cities - 1859 - Charles Dickens
+*Frankenstein - 1818 - Mary Shelly
 Reviews:
 *Star Reviews
 

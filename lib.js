@@ -20,31 +20,12 @@ const books = [
       author: "Charles Dickens",
       year: 1859,
     },
+    {
+      title: "Frankenstein",
+      author: "Mary Shelley",
+      year: 1818,
+    },
   ];
   
-  // Function to display books
-  function displayBooks() {
-    const booksContainer = document.getElementById("books-container");
-    booksContainer.innerHTML = ""; // Clear previous content
-  
-    books.forEach((book) => {
-      const bookElement = document.createElement("div");
-      bookElement.innerHTML = `<b>${book.title}</b> - ${book.year} - ${book.author}`;
-      booksContainer.appendChild(bookElement);
-    });
-  }
-  
-  // Function to enable adding new books
-  function addBook(title, author, year) {
-    const newBook = {
-      title: title,
-      author: author,
-      year: year,
-    };
-    books.push(newBook);
-    displayBooks();
-  }
-  
-  // Initial display of books
-  displayBooks();
+
   

@@ -35,7 +35,7 @@ body {
     transition: .4s;
 }
 ul li:hover a{
-    padding-left: 50px;
+    padding-left: 50 px;
 
 }
 #check{
@@ -61,7 +61,30 @@ label #cancel{
     font-size: 30px;
     color: #f7f9fa;
     padding: 4px 9px;
+    transition: all .5s ease;
 }
+label #nav-open, 
+label #nav-close{
+    position: fixed;
+}
+
 #check checked ~.sidebar{
-    left:
+    left: 0;
+}
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#check:checked ~ label #cancel{
+    left: -195px;
+    opacity: 0;
+    pointer-events: none;
+}
+section{
+    background-color: #faf1e6   no repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
 }

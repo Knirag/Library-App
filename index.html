@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Library App</title>
   <link rel="stylesheet" href="lib.css">
+  <script src="lib.js"></script>
 </head>
 
 <body>
@@ -19,8 +20,13 @@
     </ul>
   </div>
   <div class="main-content">
-    <h1>Welcome to the Library App</h1>
-    <p>Please select a book from the sidebar to view more details.</p>
+    <div class="book-info" id="bookInfo">
+      <img src="treasure-island.jpg" alt="Book Cover" id="bookCover">
+      <h1 id="bookTitle">Treasure Island</h1>
+      <p id="bookDescription">
+        A classic adventure novel by Robert Louis Stevenson.
+      </p>
+    </div>
   </div>
 </body>
 

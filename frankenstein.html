@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Frankenstein - Library App</title>
+  <link rel="stylesheet" href="lib.css">
+</head>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Frankenstein - Library App</title>
+  <link rel="stylesheet" href="lib.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <header>Books:</header>
+    <ul>
+      <li><a href="index.html">Back to Home</a></li>
+      <li><a href="frankenstein.html">Frankenstein</a></li>
+      <li><a href="tale-of-two-cities.html">A Tale of Two Cities</a></li>
+      <li><a href="black-beauty.html">Black Beauty</a></li>
+      <li><a href="gullivers-travels.html">Gulliver's Travels</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <div class="book-info" id="bookInfo">
+      <img src="frankenstein.jpg" alt="Book Cover" id="bookCover">
+      <h1 id="bookTitle">Frankenstein</h1>
+      <p id="bookDescription">
+        A novel written by Mary Shelley, often considered the first science fiction novel.
+      </p>
+      <ul id="reviews">
+        <!-- Review items will be added dynamically through JavaScript -->
+      </ul>
+      <button id="addReviewButton" onclick="toggleReviewForm()">Add Review</button>
+      <form id="reviewForm">
+        <label for="reviewerName">Your Name:</label>
+        <input type="text" id="reviewerName" required>
+        <label for="reviewContent">Review:</label>
+        <textarea id="reviewContent" required></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
+    </div>
+    <div id="submittedReviews">
+      <!-- Submitted reviews will be displayed here -->
+    </div>
+  </div>
+  <script src="lib.js"></script>
+</body>
+
+</html>

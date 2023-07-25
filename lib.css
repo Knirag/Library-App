@@ -54,7 +54,11 @@ body {
   }
   
   .main-content {
-    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
   }
   
   .main-content h1 {
@@ -113,7 +117,6 @@ body {
 #reviewForm {
     display: none;
 }
-/* ... Your existing CSS ... */
 
 /* Style for the "Add Review" button */
 #addReviewButton {
@@ -195,4 +198,3 @@ body {
     outline: none;
 }
 
-/* ... Your existing CSS ... */

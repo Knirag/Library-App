@@ -33,7 +33,6 @@ body {
     margin: 0;
     padding: 0;
     background: #e8dac8; /* Background color for the ul element (sidebar content) */
-    border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
 }
 

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>A Tale of Two Cities - Library App</title>
+  <title>Little Women - Library App</title>
   <link rel="stylesheet" href="lib.css">
 </head>
 
@@ -22,12 +22,14 @@
   </div>
   <div class="main-content">
     <div class="book-info" id="bookInfo">
-      <img src="tale-of-two-cities.jpg" alt="Book Cover" id="bookCover">
-      <h1 id="bookTitle">Tale of Two Cities</h1>
+        <div class="book-image">
+      <img src="little-women.jpg" alt="Book Cover" id="bookCover">
+        </div>
+        <div class="book-details">
+      <h1 id="bookTitle">Little Women</h1>
       <p id="bookDescription">
-        A historical novel by Charles Dickens, set in London and Paris during the French Revolution.
-      </p>
-    <ul id="reviews">
+        Little Women is a coming-of-age novel written by American novelist Louisa May Alcott, originally published in two volumes in 1868 and 1869      </p>
+      <ul id="reviews">
         <!-- Review items will be added dynamically through JavaScript -->
       </ul>
       <button id="addReviewButton" onclick="addReview()">Add Review</button>
@@ -42,6 +44,7 @@
     <div id="submittedReviews">
       <!-- Submitted reviews will be displayed here -->
     </div>
+  </div>
   <script src="lib.js"></script>
 </body>
 

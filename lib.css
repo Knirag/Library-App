@@ -1,33 +1,35 @@
-
-/* lib.css */
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    position: relative;
+    min-height: 100vh;
   }
   
   .sidebar {
     position: fixed;
     left: 0;
     top: 0;
+    /*transform: translateY(-50%);*/
     width: 250px;
     background-color: #e8dac8;
     color: #333;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 1;
-    overflow-y: auto;
+    overflow-y: hidden;
+    transition: width 0.3s;
+    border: 2px solid #4d3b22;
+    border-radius: 10px;
+    height: 100vh;
   }
-  
-  .sidebar header {
-    font-size: 24px;
-    color: #4d3b22;
-    margin-left: 10px;
-    user-select: none;
+  .sidebar ul {
+    padding: 0;
+    margin: 20px 0; 
   }
   
   .sidebar ul {
-    list-style: none;
+    list-style-type: none; 
     margin: 0;
     padding: 0;
   }
@@ -42,10 +44,21 @@ body {
     box-sizing: border-box;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     transition: background-color 0.2s;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Add a brown border at the bottom of each book item */
   }
   
+
   .sidebar ul li:last-child a {
     border-bottom-right-radius: 10px;
+  }
+
+  .sidebar ul li {
+  list-style: none;
+  margin: 10px 0; 
+}
+  .sidebar ul li.active a {
+    background-color: #4d3b22;
+    color: #fff;
   }
   
   .sidebar ul a:hover {
@@ -54,28 +67,14 @@ body {
   }
   
   .main-content {
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 20px;
+    flex-direction: column;
   }
   
-  .main-content h1 {
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .main-content p {
-    font-size: 16px;
-    color: #666;
-  }
-  
-  /* ... Your existing CSS ... */
-  
-
-.book-info {
+  .book-info {
     text-align: center;
     background-color: #faedde;
     border-radius: 10px;
@@ -83,43 +82,21 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     max-width: 400px;
     transition: transform 0.2s;
-}
-
-/* Adjust the book cover image size */
-.book-info img {
+    border: 2px solid #4d3b22; /* Add a brown border to the book info container */
+  }
+  
+  .book-info img {
     max-width: 150px;
     border-radius: 10px;
     margin-bottom: 20px;
-}
-
-.book-info h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.book-info p {
-    font-size: 16px;
-    color: #666;
-}
-
-/* Apply hover effect on the book info container */
-.book-info:hover {
+    border: 2px solid #4d3b22; /* Add a brown border to the book cover image */
+  }
+  
+  .book-info:hover {
     transform: translateY(-5px);
-}
-
-/* Calculate the height of the sidebar to end at the last book */
-.sidebar {
-    height: calc(100vh - 65px);
-    overflow-y: auto;
-}
-
-#reviewForm {
-    display: none;
-}
-
-/* Style for the "Add Review" button */
-#addReviewButton {
+  }
+  
+  #addReviewButton {
     background-color: #4d3b22;
     color: #ffffff;
     border: none;
@@ -128,58 +105,38 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     border-radius: 5px;
-}
-
-#addReviewButton:hover {
+    border: 2px solid #4d3b22; /* Add a brown border to the "Add Review" button */
+  }
+  
+  #addReviewButton:hover {
     background-color: #694f2e;
-}
-
-#addReviewButton:focus {
-    outline: none;
-}
-
-/* Style for the review form */
-#reviewForm {
+  }
+  
+  #reviewForm {
     display: none;
     padding: 20px;
     background-color: #e8dac8;
     border-radius: 5px;
     max-width: 500px;
     margin: 0 auto;
-}
-
-#reviewsSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#reviews {
-    list-style: none;
-    padding: 0;
-}
-
-#reviewForm label {
-    display: block;
-    margin-bottom: 5px;
-    color: #4d3b22;
-}
-
-#reviewForm input[type="text"],
-#reviewForm textarea {
+    border: 2px solid #4d3b22; /* Add a brown border to the review form */
+  }
+  
+  #reviewForm input[type="text"],
+  #reviewForm textarea {
     width: 100%;
     padding: 10px;
-    
     margin-bottom: 10px;
     border: 1px solid #694f2e;
     border-radius: 3px;
-}
-
-#reviewForm textarea {
+    border: 2px solid #4d3b22; /* Add a brown border to the input fields in the review form */
+  }
+  
+  #reviewForm textarea {
     resize: vertical;
-}
-
-#reviewForm button[type="submit"] {
+  }
+  
+  #reviewForm button[type="submit"] {
     background-color: #4d3b22;
     color: #ffffff;
     border: none;
@@ -188,13 +145,14 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     border-radius: 5px;
-}
-
-#reviewForm button[type="submit"]:hover {
+    border: 2px solid #4d3b22; /* Add a brown border to the submit button in the review form */
+  }
+  
+  #reviewForm button[type="submit"]:hover {
     background-color: #694f2e;
-}
-
-#reviewForm button[type="submit"]:focus {
+  }
+  
+  #reviewForm button[type="submit"]:focus {
     outline: none;
-}
-
+  }
+  

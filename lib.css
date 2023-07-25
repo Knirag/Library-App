@@ -1,3 +1,4 @@
+/* Font Awesome Library */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
 body {
@@ -8,11 +9,10 @@ body {
 
 .sidebar {
     position: fixed;
-    left: -250px;
+    left: 0; /* Updated to be visible by default */
     width: 250px;
     height: 100%;
     background: #e8dac8;
-    transition: left 0.4s;
 }
 
 .sidebar header {
@@ -41,6 +41,7 @@ ul li:hover a {
     padding-left: 50px;
 }
 
+/* Remove the styles related to the checkbox and label */
 #check {
     display: none;
 }
@@ -61,19 +62,5 @@ ul li:hover a {
 
 .sidebar header #btnOpen,
 .sidebar header #btnClose {
-    position: absolute;
-    left: 40px;
-    top: 25px;
-    font-size: 35px;
-    color: white;
-    padding: 6px 12px;
-    cursor: pointer;
-    background: #d6cdb4;
-    border-radius: 3px;
-    z-index: 1;
-}
-
-.sidebar header #btnClose {
-    opacity: 0;
-    pointer-events: none;
+    display: none;
 }

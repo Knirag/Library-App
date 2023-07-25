@@ -8,7 +8,7 @@ const books = {
   'frankenstein': {
       title: 'Frankenstein',
       description: 'A novel written by Mary Shelley, often considered the first science fiction novel.',
-      cover: 'frankenstein.jpg' // Replace with the actual image file path
+      cover: '' // Replace with the actual image file path
   },
   'tale-of-two-cities': {
       title: 'A Tale of Two Cities',

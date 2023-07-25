@@ -1,35 +1,39 @@
-// Book objects
-const books = [
-    {
-      title: "Treasure Island",
-      author: "Robert Louis Stevenson",
-      year: 1883,
-    },
-    {
-      title: "Gulliver's Travels",
-      author: "Jonathan Swift",
-      year: 1726,
-    },
-    {
-      title: "Black Beauty",
-      author: "Anna Sewell",
-      year: 1877,
-    },
-    {
-      title: "A Tale of Two Cities",
-      author: "Charles Dickens",
-      year: 1859,
-    },
-    {
-      title: "Frankenstein",
-      author: "Mary Shelley",
-      year: 1818,
-    },
-  ];
-  
-  /*  <input type="checkbox" id="check">
-    <label for="check"></label>
-    <i class="fas fa-bars" id="btnOpen"></i>
-    <i class="fas fa-times" id="btnClose"></i> */
 
-  
+const books = {
+  'treasure-island': {
+      title: 'Treasure Island',
+      description: 'A classic adventure novel by Robert Louis Stevenson.',
+      cover: 'treasure-island.jpg' // Replace with the actual image file path
+  },
+  'frankenstein': {
+      title: 'Frankenstein',
+      description: 'A novel written by Mary Shelley, often considered the first science fiction novel.',
+      cover: 'frankenstein.jpg' // Replace with the actual image file path
+  },
+  'tale-of-two-cities': {
+      title: 'A Tale of Two Cities',
+      description: 'A historical novel by Charles Dickens, set in London and Paris during the French Revolution.',
+      cover: 'tale-of-two-cities.jpg' // Replace with the actual image file path
+  },
+  'black-beauty': {
+      title: 'Black Beauty',
+      description: 'A novel by Anna Sewell about the life of a horse named Black Beauty.',
+      cover: 'black-beauty.jpg' // Replace with the actual image file path
+  },
+  'gullivers-travels': {
+      title: "Gulliver's Travels",
+      description: 'A satirical novel by Jonathan Swift, featuring the adventures of Lemuel Gulliver.',
+      cover: 'gullivers-travels.jpg' // Replace with the actual image file path
+  }
+};
+
+function showBookInfo(bookId) {
+  const book = books[bookId];
+  const bookCover = document.getElementById('bookCover');
+  const bookTitle = document.getElementById('bookTitle');
+  const bookDescription = document.getElementById('bookDescription');
+
+  bookCover.src = book.cover;
+  bookTitle.textContent = book.title;
+  bookDescription.textContent = book.description;
+}

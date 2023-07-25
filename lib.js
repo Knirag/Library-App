@@ -60,3 +60,59 @@ function changeBook(bookIndex) {
   bookInfo.querySelector('h1').innerText = bookTitle;
   bookInfo.querySelector('p').innerText = bookDescription;
 }
+
+// ... Your existing changeBook() function ...
+
+// Function to toggle the review form visibility
+function toggleReviewForm() {
+  const reviewForm = document.getElementById('reviewForm');
+  const addReviewButton = document.getElementById('addReviewButton');
+
+  if (reviewForm.style.display === 'block') {
+      reviewForm.style.display = 'none';
+      addReviewButton.innerText = 'Add Review';
+  } else {
+      reviewForm.style.display = 'block';
+      addReviewButton.innerText = 'Cancel';
+  }
+}
+
+// Add an event listener to the "Add Review" button click
+const addReviewButton = document.getElementById('addReviewButton');
+addReviewButton.addEventListener('click', toggleReviewForm);
+
+// Add a new function to handle review form submission
+
+function submitReview(event) {
+  event.preventDefault();
+
+  // Get the values from the review form
+  const reviewerName = document.getElementById('reviewerName').value;
+  const reviewContent = document.getElementById('reviewContent').value;
+
+  // Create a new review item
+  const reviewItem = document.createElement('li');
+  const reviewInfo = document.createElement('div');
+  const reviewerNameElement = document.createElement('strong');
+  reviewerNameElement.textContent = reviewerName;
+  const reviewDescription = document.createElement('p');
+  reviewDescription.textContent = reviewContent;
+  reviewInfo.appendChild(reviewerNameElement);
+  reviewInfo.appendChild(reviewDescription);
+  reviewItem.appendChild(reviewInfo);
+
+  // Add the review item to the reviews list
+  const reviewsList = document.getElementById('reviews');
+  reviewsList.appendChild(reviewItem);
+
+  // Clear the review form fields after submission
+  document.getElementById('reviewerName').value = '';
+  document.getElementById('reviewContent').value = '';
+
+  // Hide the review form and show the reviews section
+  toggleReviewForm();
+}
+
+
+
+

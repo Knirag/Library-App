@@ -76,7 +76,7 @@ body {
 
 .book-info {
     text-align: center;
-    background-color: #fff;
+    background-color: #faedde;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -112,3 +112,90 @@ body {
     height: calc(100vh - 65px);
     overflow-y: auto;
 }
+
+#reviewForm {
+    display: none;
+}
+/* ... Your existing CSS ... */
+
+/* Style for the "Add Review" button */
+#addReviewButton {
+    background-color: #4d3b22;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+#addReviewButton:hover {
+    background-color: #694f2e;
+}
+
+#addReviewButton:focus {
+    outline: none;
+}
+
+/* Style for the review form */
+#reviewForm {
+    display: none;
+    padding: 20px;
+    background-color: #e8dac8;
+    border-radius: 5px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#reviewsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reviews {
+    list-style: none;
+    padding: 0;
+}
+
+#reviewForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4d3b22;
+}
+
+#reviewForm input[type="text"],
+#reviewForm textarea {
+    width: 100%;
+    padding: 10px;
+    
+    margin-bottom: 10px;
+    border: 1px solid #694f2e;
+    border-radius: 3px;
+}
+
+#reviewForm textarea {
+    resize: vertical;
+}
+
+#reviewForm button[type="submit"] {
+    background-color: #4d3b22;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+#reviewForm button[type="submit"]:hover {
+    background-color: #694f2e;
+}
+
+#reviewForm button[type="submit"]:focus {
+    outline: none;
+}
+
+/* ... Your existing CSS ... */

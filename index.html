@@ -5,20 +5,38 @@
     <meta charset="utf-8">
     <title>Library App</title>
     <link rel="stylesheet" href="lib.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="lib.js"></script>
 </head>
 
 <body>
     <div class="sidebar">
         <div class="sidebar-header">
+            <i class="fas fa-bars" id="btnOpen"></i>
+            <i class="fas fa-times" id="btnClose"></i>
             <header>Books:</header>
         </div>
         <ul>
-            <li class="active"><a href="javascript:void(0);" onclick="changeBook(0)">Treasure Island</a></li>
-            <li><a href="javascript:void(0);" onclick="changeBook(1)">Frankenstein</a></li>
-            <li><a href="javascript:void(0);" onclick="changeBook(2)">A Tale of Two Cities</a></li>
-            <li><a href="javascript:void(0);" onclick="changeBook(3)">Black Beauty</a></li>
-            <li><a href="javascript:void(0);" onclick="changeBook(4)">Gullivers Travels</a></li>
+            <li class="active">
+                <a href="javascript:void(0);" onclick="changeBook(0)" data-description="A classic adventure novel by Robert Louis Stevenson."
+                    data-image="treasure-island.jpg">Treasure Island</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="changeBook(1)" data-description="A novel written by Mary Shelley, often considered the first science fiction novel."
+                    data-image="frankenstein.jpg">Frankenstein</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="changeBook(2)" data-description="A historical novel by Charles Dickens, set in London and Paris during the French Revolution."
+                    data-image="tale-of-two-cities.jpg">A Tale of Two Cities</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="changeBook(3)" data-description="A novel by Anna Sewell about the life of a horse named Black Beauty."
+                    data-image="black-beauty.jpg">Black Beauty</a>
+            </li>
+            <li>
+                <a href="javascript:void(0);" onclick="changeBook(4)" data-description="A satirical novel by Jonathan Swift, featuring the adventures of Lemuel Gulliver."
+                    data-image="gullivers-travels.jpg">Gullivers Travels</a>
+            </li>
         </ul>
     </div>
     <div class="main-content">
@@ -28,6 +46,18 @@
             <p>
                 A classic adventure novel by Robert Louis Stevenson.
             </p>
+            <h2>Reviews</h2>
+            <ul id="reviews">
+                <!-- Review items will be added dynamically through JavaScript -->
+            </ul>
+            <button id="addReviewButton" onclick="toggleReviewForm()">Add Review</button>
+            <form id="reviewForm">
+                <label for="reviewerName">Your Name:</label>
+                <input type="text" id="reviewerName" required>
+                <label for="reviewContent">Review:</label>
+                <textarea id="reviewContent" required></textarea>
+                <button type="submit">Submit Review</button>
+            </form>
         </div>
     </div>
 </body>

@@ -1,9 +1,8 @@
-
 const books = {
   'treasure-island': {
       title: 'Treasure Island',
       description: 'A classic adventure novel by Robert Louis Stevenson.',
-      cover: 'treasure-island.jpg' 
+      cover: 'treasure-island.jpg'
   },
   'frankenstein': {
       title: 'Frankenstein',
@@ -18,12 +17,12 @@ const books = {
   'black-beauty': {
       title: 'Black Beauty',
       description: 'A novel by Anna Sewell about the life of a horse named Black Beauty.',
-      cover: 'black-beauty.jpg' 
+      cover: 'black-beauty.jpg'
   },
   'gullivers-travels': {
       title: "Gulliver's Travels",
       description: 'A satirical novel by Jonathan Swift, featuring the adventures of Lemuel Gulliver.',
-      cover: 'gullivers-travels.jpg' 
+      cover: 'gullivers-travels.jpg'
   }
 };
 
@@ -38,7 +37,7 @@ function showBookInfo(bookId) {
   bookDescription.textContent = book.description;
 }
 
-function changeBook(bookIndex) {
+function changeBook(bookId) {
   // Get all book items in the sidebar
   const bookItems = document.querySelectorAll('.sidebar ul li');
 
@@ -48,20 +47,22 @@ function changeBook(bookIndex) {
   });
 
   // Add 'active' class to the selected book item
-  bookItems[bookIndex].classList.add('active');
+  const selectedBookItem = document.getElementById(bookId);
+  selectedBookItem.classList.add('active');
 
   // Update book info in the main content section
-  const bookInfo = document.getElementById('bookInfo');
-  const bookTitle = bookItems[bookIndex].innerText;
-  const bookDescription = bookItems[bookIndex].querySelector('a').getAttribute('data-description');
-  const bookImage = bookItems[bookIndex].querySelector('a').getAttribute('data-image');
-
-  bookInfo.querySelector('img').src = bookImage;
-  bookInfo.querySelector('h1').innerText = bookTitle;
-  bookInfo.querySelector('p').innerText = bookDescription;
+  showBookInfo(bookId);
+}
+function handleBookItemClick(event) {
+  const clickedBookId = event.currentTarget.id;
+  changeBook(clickedBookId);
 }
 
-// ... Your existing changeBook() function ...
+// Add click event listener to each book item in the sidebar
+const bookItems = document.querySelectorAll('.sidebar ul li');
+bookItems.forEach((item) => {
+  item.addEventListener('click', handleBookItemClick);
+});
 
 // Function to toggle the review form visibility
 function toggleReviewForm() {
@@ -81,8 +82,7 @@ function toggleReviewForm() {
 const addReviewButton = document.getElementById('addReviewButton');
 addReviewButton.addEventListener('click', toggleReviewForm);
 
-// Add a new function to handle review form submission
-
+// Function to submit a review
 function submitReview(event) {
   event.preventDefault();
 
@@ -113,6 +113,9 @@ function submitReview(event) {
   toggleReviewForm();
 }
 
+// Add an event listener to the review form submission
+const reviewForm = document.getElementById('reviewForm');
+reviewForm.addEventListener('submit', submitReview);
 
-
-
+// Initial book selection when the page loads
+changeBook('treasure-island');

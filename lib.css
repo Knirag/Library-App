@@ -1,40 +1,40 @@
-/* Font Awesome Library */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
 body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #ebe5df;
+    background-color: #f8f8f8;
 }
 
 .sidebar {
     position: fixed;
     left: 0;
+    top: 0;
     width: 250px;
-    height: 100%;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    overflow: hidden;
+    background-color: #e8dac8;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
 }
 
 .sidebar header {
-    font-size: 22px;
-    color: white;
-    text-align: center;
-    line-height: 65px;
+    font-size: 24px;
+    color: #4d3b22;
+    margin-left: 10px;
     user-select: none;
-    margin: 0;
-    background: #4d3b22;
-    border-top-right-radius: 30px;
 }
 
 .sidebar ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    background: #e8dac8; /* Background color for the ul element (sidebar content) */
-    border-bottom-right-radius: 30px;
 }
 
 .sidebar ul a {
@@ -42,43 +42,73 @@ body {
     height: 65px;
     width: 100%;
     line-height: 65px;
-    color: white;
-    padding-left: 40px;
+    color: #4d3b22;
+    padding-left: 30px;
     box-sizing: border-box;
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    border-bottom: 1px solid black;
-    transition: padding-left 0.4s;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
 }
 
 /* Apply a slight rounding only to the last item in the sidebar */
 .sidebar ul li:last-child a {
-    border-bottom-right-radius: 30px;
+    border-bottom-right-radius: 10px;
 }
 
-ul li:hover a {
-    padding-left: 50px;
+/* Style the active book in the sidebar */
+.sidebar ul li.active a {
+    background-color: #4d3b22;
+    color: #fff;
 }
 
-/* Remove the styles related to the checkbox and label */
-#check {
-    display: none;
+.sidebar ul a:hover {
+    background-color: #4d3b22;
+    color: #fff;
 }
 
-#check:checked ~ .sidebar {
-    left: 0;
+/* Styling for the main content section */
+.main-content {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-#check:checked ~ .sidebar header #btnOpen {
-    opacity: 0;
-    pointer-events: none;
+.book-info {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    transition: transform 0.2s;
 }
 
-#check:checked ~ .sidebar header #btnClose {
-    opacity: 1;
-    pointer-events: auto;
+/* Adjust the book cover image size */
+.book-info img {
+    max-width: 150px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-.sidebar header #btnOpen,
-.sidebar header #btnClose {
-    display: none;
+.book-info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.book-info p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Apply hover effect on the book info container */
+.book-info:hover {
+    transform: translateY(-5px);
+}
+
+/* Calculate the height of the sidebar to end at the last book */
+.sidebar {
+    height: calc(100vh - 65px);
+    overflow-y: auto;
 }

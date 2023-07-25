@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="utf-8">
     <title>Library App</title>
     <link rel="stylesheet" href="lib.css">
     <script src="lib.js"></script>
 </head>
+
 <body>
     <div class="sidebar">
         <div class="sidebar-header">
+            <i class="fas fa-bars" id="btnOpen"></i>
+            <i class="fas fa-times" id="btnClose"></i>
             <header>Books:</header>
         </div>
         <ul>
-            <li><a href="#" onclick="showBookInfo('treasure-island')">Treasure Island</a></li>
-            <li><a href="#" onclick="showBookInfo('frankenstein')">Frankenstein</a></li>
-            <li><a href="#" onclick="showBookInfo('tale-of-two-cities')">A Tale of Two Cities</a></li>
-            <li><a href="#" onclick="showBookInfo('black-beauty')">Black Beauty</a></li>
-            <li><a href="#" onclick="showBookInfo('gullivers-travels')">Gullivers Travels</a></li>
+            <li class="active"><a href="#">Treasure Island</a></li>
+            <li><a href="#">Frankenstein</a></li>
+            <li><a href="#">A Tale of Two Cities</a></li>
+            <li><a href="#">Black Beauty</a></li>
+            <li><a href="#">Gullivers Travels</a></li>
         </ul>
     </div>
-    <section class="main-content">
+    <div class="main-content">
         <div class="book-info" id="bookInfo">
-            <img src="" alt="Book Cover" id="bookCover">
-            <h1 id="bookTitle"></h1>
-            <p id="bookDescription"></p>
+            <img src="treasure-island.jpg" alt="Book Cover">
+            <h1>Treasure Island</h1>
+            <p>
+                A classic adventure novel by Robert Louis Stevenson.
+            </p>
         </div>
-    </section>
+    </div>
 </body>
+
 </html>

@@ -46,6 +46,55 @@ body {
 ul li:hover a {
     padding-left: 50px;
 }
+#check {
+    display: none;
+}
+
+label#btn, label#cancel { 
+    position: absolute;
+    cursor: pointer;
+    background: #d6cdb4;
+    border-radius: 3px;
+}
+
+label#btn {
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+}
+
+label#cancel {
+    z-index: 1111;
+    left: 159px;
+    top: 17px;
+    font-size: 30px;
+    color: #f7f9fa;
+    padding: 4px 9px;
+    transition: all .5s ease;
+}
+
+label#nav-open,
+label#nav-close {
+    position: fixed;
+}
+
+#check:checked ~ .sidebar {
+    left: 0;
+}
+
+#check:checked ~ label#btn { 
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label#cancel { 
+    left: -195px;
+    opacity: 0;
+    pointer-events: none;
+}
 section {
     background-color: #faf1e6; 
     background-repeat: no-repeat; 

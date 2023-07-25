@@ -12,16 +12,28 @@ body {
     left: 0;
     width: 250px;
     height: 100%;
+    background: #e8dac8;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
+    overflow: hidden; /* To ensure border-radius works correctly */
+}
+
+.sidebar-header {
+    background: #4d3b22;
+    padding: 10px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 0; /* Round top-right corner only for the header */
+    display: flex;
+    align-items: center;
 }
 
 .sidebar header {
     font-size: 22px;
     color: white;
+    margin-left: 10px;
+    flex-grow: 1;
     text-align: center;
-    line-height: 65px;
-    background: #4d3b22;
+    line-height: 45px;
     user-select: none;
 }
 
@@ -29,9 +41,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    background: #e8dac8; /* Background color for the ul element (sidebar content) */
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-bottom-right-radius: 30px; /* Round bottom-right corner for the book list */
 }
 
 .sidebar ul a {
@@ -49,33 +59,7 @@ body {
 
 /* Apply a slight rounding only to the last item in the sidebar */
 .sidebar ul li:last-child a {
-    border-bottom-right-radius: 30px;
+    border-bottom-right-radius: 30px; /* Rounded bottom-right corner */
 }
 
 ul li:hover a {
-    padding-left: 50px;
-}
-
-/* Remove the styles related to the checkbox and label */
-#check {
-    display: none;
-}
-
-#check:checked ~ .sidebar {
-    left: 0;
-}
-
-#check:checked ~ .sidebar header #btnOpen {
-    opacity: 0;
-    pointer-events: none;
-}
-
-#check:checked ~ .sidebar header #btnClose {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.sidebar header #btnOpen,
-.sidebar header #btnClose {
-    display: none;
-}

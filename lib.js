@@ -1,47 +1,38 @@
 const books = {
   'treasure-island': {
-      title: 'Treasure Island',
-      description: 'A classic adventure novel by Robert Louis Stevenson.',
-      cover: 'treasure-island.jpg'
+    title: 'Treasure Island',
+    description: 'A classic adventure novel by Robert Louis Stevenson.',
+    cover: 'treasure-island.jpg'
   },
   'frankenstein': {
-      title: 'Frankenstein',
-      description: 'A novel written by Mary Shelley, often considered the first science fiction novel.',
-      cover: 'frankenstein.jpg'
+    title: 'Frankenstein',
+    description: 'A novel written by Mary Shelley, often considered the first science fiction novel.',
+    cover: 'frankenstein.jpg'
   },
   'tale-of-two-cities': {
-      title: 'A Tale of Two Cities',
-      description: 'A historical novel by Charles Dickens, set in London and Paris during the French Revolution.',
-      cover: 'tale-of-two-cities.jpg'
+    title: 'A Tale of Two Cities',
+    description: 'A historical novel by Charles Dickens, set in London and Paris during the French Revolution.',
+    cover: 'tale-of-two-cities.jpg'
   },
   'black-beauty': {
-      title: 'Black Beauty',
-      description: 'A novel by Anna Sewell about the life of a horse named Black Beauty.',
-      cover: 'black-beauty.jpg'
+    title: 'Black Beauty',
+    description: 'A novel by Anna Sewell about the life of a horse named Black Beauty.',
+    cover: 'black-beauty.jpg'
   },
   'gullivers-travels': {
-      title: "Gulliver's Travels",
-      description: 'A satirical novel by Jonathan Swift, featuring the adventures of Lemuel Gulliver.',
-      cover: 'gullivers-travels.jpg'
+    title: "Gulliver's Travels",
+    description: 'A satirical novel by Jonathan Swift, featuring the adventures of Lemuel Gulliver.',
+    cover: 'gullivers-travels.jpg'
   }
 };
-
-function showBookInfo(bookId) {
-  const book = books[bookId];
-  const bookCover = document.getElementById('bookCover');
-  const bookTitle = document.getElementById('bookTitle');
-  const bookDescription = document.getElementById('bookDescription');
-
-  bookCover.src = book.cover;
-  bookTitle.textContent = book.title;
-  bookDescription.textContent = book.description;
-}
 
 // ... Your existing code ...
 
 function changeBook(bookId) {
-  // Remove 'active' class from all book items
+  // Get all book items in the sidebar
   const bookItems = document.querySelectorAll('.sidebar ul li');
+
+  // Remove 'active' class from all book items
   bookItems.forEach((item) => {
     item.classList.remove('active');
   });
@@ -54,10 +45,8 @@ function changeBook(bookId) {
   showBookInfo(bookId);
 }
 
-// Function to handle book item click in the sidebar
 function handleBookItemClick(event) {
-  const clickedBookLink = event.currentTarget.querySelector('a');
-  const clickedBookId = clickedBookLink.getAttribute('href').substring(1);
+  const clickedBookId = event.currentTarget.id;
   changeBook(clickedBookId);
 }
 
@@ -66,9 +55,6 @@ const bookItems = document.querySelectorAll('.sidebar ul li');
 bookItems.forEach((item) => {
   item.addEventListener('click', handleBookItemClick);
 });
-
-// ... Your existing code ...
-
 
 // Function to toggle the review form visibility
 function toggleReviewForm() {

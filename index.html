@@ -2,48 +2,48 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <title>Library App</title>
-    <link rel="stylesheet" href="lib.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="lib.js"></script>
+  <meta charset="utf-8">
+  <title>Library App</title>
+  <link rel="stylesheet" href="lib.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="lib.js"></script>
 </head>
 
 <body>
-    <div class="sidebar">
-            <header>Books:</header>
-            <ul>
-                <li id="treasure-island" onclick="changeBook('treasure-island')"><a href="#">Treasure Island</a></li>
-                <li id="frankenstein" onclick="changeBook('frankenstein')"><a href="#">Frankenstein</a></li>
-                <li id="tale-of-two-cities" onclick="changeBook('tale-of-two-cities')"><a href="#">A Tale of Two Cities</a></li>
-                <li id="black-beauty" onclick="changeBook('black-beauty')"><a href="#">Black Beauty</a></li>
-                <li id="gullivers-travels" onclick="changeBook('gullivers-travels')"><a href="#">Gulliver's Travels</a></li>
-            </ul>
+  <div class="sidebar">
+    <header>Books:</header>
+    <ul>
+      <li id="treasure-island"><a href="#treasure-island">Treasure Island</a></li>
+      <li id="frankenstein"><a href="#frankenstein">Frankenstein</a></li>
+      <li id="tale-of-two-cities"><a href="#tale-of-two-cities">A Tale of Two Cities</a></li>
+      <li id="black-beauty"><a href="#black-beauty">Black Beauty</a></li>
+      <li id="gullivers-travels"><a href="#gullivers-travels">Gulliver's Travels</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <div class="book-info" id="bookInfo">
+      <img src="treasure-island.jpg" alt="Book Cover" id="bookCover">
+      <h1 id="bookTitle">Treasure Island</h1>
+      <p id="bookDescription">
+        A classic adventure novel by Robert Louis Stevenson.
+      </p>
+      <h2>Reviews</h2>
+      <ul id="reviews">
+        <!-- Review items will be added dynamically through JavaScript -->
+      </ul>
+      <button id="addReviewButton" onclick="toggleReviewForm()">Add Review</button>
+      <form id="reviewForm">
+        <label for="reviewerName">Your Name:</label>
+        <input type="text" id="reviewerName" required>
+        <label for="reviewContent">Review:</label>
+        <textarea id="reviewContent" required></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
     </div>
-    <div class="main-content">
-        <div class="book-info" id="bookInfo">
-            <img src="treasure-island.jpg" alt="Book Cover">
-            <h1>Treasure Island</h1>
-            <p>
-                A classic adventure novel by Robert Louis Stevenson.
-            </p>
-            <h2>Reviews</h2>
-            <ul id="reviews">
-                <!-- Review items will be added dynamically through JavaScript -->
-            </ul>
-            <button id="addReviewButton" onclick="toggleReviewForm()">Add Review</button>
-            <form id="reviewForm">
-                <label for="reviewerName">Your Name:</label>
-                <input type="text" id="reviewerName" required>
-                <label for="reviewContent">Review:</label>
-                <textarea id="reviewContent" required></textarea>
-                <button type="submit">Submit Review</button>
-            </form>
-        </div>
-        <div id="submittedReviews">
-            <!-- Submitted reviews will be displayed here -->
-        </div>
+    <div id="submittedReviews">
+      <!-- Submitted reviews will be displayed here -->
     </div>
+  </div>
 </body>
 
 </html>

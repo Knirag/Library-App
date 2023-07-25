@@ -5,43 +5,22 @@
   <meta charset="utf-8">
   <title>Library App</title>
   <link rel="stylesheet" href="lib.css">
-  <script src="lib.js"></script>
 </head>
 
 <body>
   <div class="sidebar">
     <header>Books:</header>
     <ul>
-      <li id="treasure-island"><a href="#treasure-island">Treasure Island</a></li>
-      <li id="frankenstein"><a href="#frankenstein">Frankenstein</a></li>
-      <li id="tale-of-two-cities"><a href="#tale-of-two-cities">A Tale of Two Cities</a></li>
-      <li id="black-beauty"><a href="#black-beauty">Black Beauty</a></li>
-      <li id="gullivers-travels"><a href="#gullivers-travels">Gulliver's Travels</a></li>
+      <li><a href="treasure-island.html">Treasure Island</a></li>
+      <li><a href="frankenstein.html">Frankenstein</a></li>
+      <li><a href="tale-of-two-cities.html">A Tale of Two Cities</a></li>
+      <li><a href="black-beauty.html">Black Beauty</a></li>
+      <li><a href="gullivers-travels.html">Gulliver's Travels</a></li>
     </ul>
   </div>
   <div class="main-content">
-    <div class="book-info" id="bookInfo">
-      <img src="treasure-island.jpg" alt="Book Cover" id="bookCover">
-      <h1 id="bookTitle">Treasure Island</h1>
-      <p id="bookDescription">
-        A classic adventure novel by Robert Louis Stevenson.
-      </p>
-      <h2>Reviews</h2>
-      <ul id="reviews">
-        <!-- Review items will be added dynamically through JavaScript -->
-      </ul>
-      <button id="addReviewButton" onclick="toggleReviewForm()">Add Review</button>
-      <form id="reviewForm">
-        <label for="reviewerName">Your Name:</label>
-        <input type="text" id="reviewerName" required>
-        <label for="reviewContent">Review:</label>
-        <textarea id="reviewContent" required></textarea>
-        <button type="submit">Submit Review</button>
-      </form>
-    </div>
-    <div id="submittedReviews">
-      <!-- Submitted reviews will be displayed here -->
-    </div>
+    <h1>Welcome to the Library App</h1>
+    <p>Please select a book from the sidebar to view more details.</p>
   </div>
 </body>
 

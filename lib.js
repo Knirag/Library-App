@@ -37,13 +37,13 @@ function showBookInfo(bookId) {
   bookDescription.textContent = book.description;
 }
 
-function changeBook(bookId) {
-  // Get all book items in the sidebar
-  const bookItems = document.querySelectorAll('.sidebar ul li');
+// ... Your existing code ...
 
+function changeBook(bookId) {
   // Remove 'active' class from all book items
+  const bookItems = document.querySelectorAll('.sidebar ul li');
   bookItems.forEach((item) => {
-      item.classList.remove('active');
+    item.classList.remove('active');
   });
 
   // Add 'active' class to the selected book item
@@ -53,8 +53,11 @@ function changeBook(bookId) {
   // Update book info in the main content section
   showBookInfo(bookId);
 }
+
+// Function to handle book item click in the sidebar
 function handleBookItemClick(event) {
-  const clickedBookId = event.currentTarget.id;
+  const clickedBookLink = event.currentTarget.querySelector('a');
+  const clickedBookId = clickedBookLink.getAttribute('href').substring(1);
   changeBook(clickedBookId);
 }
 
@@ -63,6 +66,9 @@ const bookItems = document.querySelectorAll('.sidebar ul li');
 bookItems.forEach((item) => {
   item.addEventListener('click', handleBookItemClick);
 });
+
+// ... Your existing code ...
+
 
 // Function to toggle the review form visibility
 function toggleReviewForm() {

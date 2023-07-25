@@ -14,6 +14,7 @@ body {
     height: 100%;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
+    overflow: hidden;
 }
 
 .sidebar header {
@@ -21,8 +22,10 @@ body {
     color: white;
     text-align: center;
     line-height: 65px;
-    background: #4d3b22;
     user-select: none;
+    margin: 0;
+    background: #4d3b22;
+    border-top-right-radius: 30px;
 }
 
 .sidebar ul {

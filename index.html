@@ -8,17 +8,26 @@
     <script src="lib.js"></script>
 </head>
 <body>
-    <input type="checkbox" id="check">
     <div class="sidebar">
-        <header>Books:</header>
+        <div class="sidebar-header">
+            <header>Books:</header>
+            <i class="fas fa-bars" id="btnOpen"></i>
+            <i class="fas fa-times" id="btnClose"></i>
+        </div>
         <ul>
-            <li><a href="#">Treasure Island</a></li>
-            <li><a href="#">Frankenstein</a></li>
-            <li><a href="#">A Tale of Two Cities</a></li>
-            <li><a href="#">Black Beauty</a></li>
-            <li><a href="#">Gullivers Travels</a></li>
+            <li><a href="#" onclick="showBookInfo('treasure-island')">Treasure Island</a></li>
+            <li><a href="#" onclick="showBookInfo('frankenstein')">Frankenstein</a></li>
+            <li><a href="#" onclick="showBookInfo('tale-of-two-cities')">A Tale of Two Cities</a></li>
+            <li><a href="#" onclick="showBookInfo('black-beauty')">Black Beauty</a></li>
+            <li><a href="#" onclick="showBookInfo('gullivers-travels')">Gullivers Travels</a></li>
         </ul>
     </div>
-    <section></section>
+    <section class="main-content">
+        <div class="book-info" id="bookInfo">
+            <img src="" alt="Book Cover" id="bookCover">
+            <h1 id="bookTitle"></h1>
+            <p id="bookDescription"></p>
+        </div>
+    </section>
 </body>
 </html>

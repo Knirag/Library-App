@@ -1,38 +1,62 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
 
-<head>
-    <meta charset="utf-8">
-    <title>Library App</title>
-    <link rel="stylesheet" href="lib.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="lib.js"></script>
-</head>
+const books = {
+  'treasure-island': {
+      title: 'Treasure Island',
+      description: 'A classic adventure novel by Robert Louis Stevenson.',
+      cover: 'treasure-island.jpg' 
+  },
+  'frankenstein': {
+      title: 'Frankenstein',
+      description: 'A novel written by Mary Shelley, often considered the first science fiction novel.',
+      cover: 'frankenstein.jpg'
+  },
+  'tale-of-two-cities': {
+      title: 'A Tale of Two Cities',
+      description: 'A historical novel by Charles Dickens, set in London and Paris during the French Revolution.',
+      cover: 'tale-of-two-cities.jpg'
+  },
+  'black-beauty': {
+      title: 'Black Beauty',
+      description: 'A novel by Anna Sewell about the life of a horse named Black Beauty.',
+      cover: 'black-beauty.jpg' 
+  },
+  'gullivers-travels': {
+      title: "Gulliver's Travels",
+      description: 'A satirical novel by Jonathan Swift, featuring the adventures of Lemuel Gulliver.',
+      cover: 'gullivers-travels.jpg' 
+  }
+};
 
-<body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <i class="fas fa-bars" id="btnOpen"></i>
-            <i class="fas fa-times" id="btnClose"></i>
-            <header>Books:</header>
-        </div>
-        <ul>
-            <li class="active"><a href="javascript:void(0);" onclick="changeBook(0)">Treasure Island</a></li>
-            <li><a href="javascript:void(0);" onclick="changeBook(1)">Frankenstein</a></li>
-            <li><a href="javascript:void(0);" onclick="changeBook(2)">A Tale of Two Cities</a></li>
-            <li><a href="javascript:void(0);" onclick="changeBook(3)">Black Beauty</a></li>
-            <li><a href="javascript:void(0);" onclick="changeBook(4)">Gullivers Travels</a></li>
-        </ul>
-    </div>
-    <div class="main-content">
-        <div class="book-info" id="bookInfo">
-            <img src="book1.jpg" alt="Book Cover">
-            <h1>Treasure Island</h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-        </div>
-    </div>
-</body>
+function showBookInfo(bookId) {
+  const book = books[bookId];
+  const bookCover = document.getElementById('bookCover');
+  const bookTitle = document.getElementById('bookTitle');
+  const bookDescription = document.getElementById('bookDescription');
 
-</html>
+  bookCover.src = book.cover;
+  bookTitle.textContent = book.title;
+  bookDescription.textContent = book.description;
+}
+
+function changeBook(bookIndex) {
+  // Get all book items in the sidebar
+  const bookItems = document.querySelectorAll('.sidebar ul li');
+
+  // Remove 'active' class from all book items
+  bookItems.forEach((item) => {
+      item.classList.remove('active');
+  });
+
+  // Add 'active' class to the selected book item
+  bookItems[bookIndex].classList.add('active');
+
+  // Update book info in the main content section
+  const bookInfo = document.getElementById('bookInfo');
+  const bookTitle = bookItems[bookIndex].innerText;
+  const bookDescription = bookItems[bookIndex].querySelector('a').getAttribute('data-description');
+  const bookImage = bookItems[bookIndex].querySelector('a').getAttribute('data-image');
+
+  bookInfo.querySelector('img').src = bookImage;
+  bookInfo.querySelector('h1').innerText = bookTitle;
+  bookInfo.querySelector('p').innerText = bookDescription;
+}

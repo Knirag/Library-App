@@ -9,10 +9,12 @@ body {
 
 .sidebar {
     position: fixed;
-    left: 0; /* Updated to be visible by default */
+    left: 0;
     width: 250px;
     height: 100%;
     background: #e8dac8;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .sidebar header {
@@ -37,11 +39,14 @@ body {
     transition: padding-left 0.4s;
 }
 
+.sidebar ul li:last-child a {
+    border-bottom-right-radius: 30px;
+}
 ul li:hover a {
     padding-left: 50px;
 }
 
-/* Remove the styles related to the checkbox and label */
+
 #check {
     display: none;
 }

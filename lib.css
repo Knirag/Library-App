@@ -42,7 +42,7 @@ body {
 ul li:hover a {
     padding-left: 50px;
 }
-/*
+
 #check {
     display: none;
 }
@@ -92,7 +92,7 @@ label#nav-close {
     opacity: 0;
     pointer-events: none;
 }
-*/
+
 section {
     background-color: #faf1e6; 
     background-repeat: no-repeat; 

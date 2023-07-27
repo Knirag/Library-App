@@ -26,13 +26,14 @@ const books = {
     cover: 'gullivers-travels.jpg'
   }
 };
+/*
 // Function to display book information
 function showBookInfo(bookId) {
   const book = books[bookId];
   const bookCover = document.getElementById('bookCover');
   const bookTitle = document.getElementById('bookTitle');
   const bookDescription = document.getElementById('bookDescription');
-
+*/
 
 // Array to store reviews
 const reviews = [];

@@ -126,4 +126,48 @@ function handleFormSubmit(event) {
 const reviewForm = document.getElementById('reviewForm');
 reviewForm.addEventListener('submit', handleFormSubmit);
 
-displayReviews();
+// ... Your existing code ...
+
+// Function to toggle the review form visibility
+function toggleReviewForm() {
+  const reviewForm = document.getElementById('reviewForm');
+  const addReviewButton = document.getElementById('addReviewButton');
+
+  if (reviewForm.style.display === 'block') {
+    reviewForm.style.display = 'none';
+    addReviewButton.innerText = 'Add Review';
+  } else {
+    reviewForm.style.display = 'block';
+    addReviewButton.innerText = 'Cancel';
+  }
+}
+
+// Add an event listener to the "Add Review" button click
+const addReviewButton = document.getElementById('addReviewButton');
+addReviewButton.addEventListener('click', toggleReviewForm);
+
+// Function to handle form submission
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  // Get the input values
+  const name = document.getElementById('reviewerName').value;
+  const review = document.getElementById('reviewContent').value;
+
+  // Add the review
+  addReview(name, review);
+
+  // Display the updated reviews
+  displayReviews();
+
+  // Clear the input fields after submission
+  document.getElementById('reviewerName').value = '';
+  document.getElementById('reviewContent').value = '';
+
+  // Hide the review form after submission
+  toggleReviewForm();
+}
+
+// Add an event listener to the form submission
+const reviewForm = document.getElementById('reviewForm');
+reviewForm.addEventListener('submit', handleFormSubmit);

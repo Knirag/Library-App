@@ -26,7 +26,6 @@ const books = {
     cover: 'gullivers-travels.jpg'
   }
 };
-
 // Function to display book information
 function showBookInfo(bookId) {
   const book = books[bookId];
@@ -34,34 +33,6 @@ function showBookInfo(bookId) {
   const bookTitle = document.getElementById('bookTitle');
   const bookDescription = document.getElementById('bookDescription');
 
-  // Update book information in the DOM elements
-  bookCover.src = book.cover;
-  bookTitle.textContent = book.title;
-  bookDescription.textContent = book.description;
-}
-
-// Function to change the displayed book based on the selected item
-function changeBook(bookId) {
-  showBookInfo(bookId);
-}
-
-// click event listener to each book item in the sidebar
-const bookItems = document.querySelectorAll('.sidebar ul li');
-bookItems.forEach((item) => {
-  item.addEventListener('click', () => {
-    // Get the book ID from the clicked item
-    const bookId = item.id;
-
-    // Change the displayed book
-    changeBook(bookId);
-
-    // Remove 'active' class from all book items
-    bookItems.forEach((item) => item.classList.remove('active'));
-
-    // Add 'active' class to the clicked item to highlight it as selected
-    item.classList.add('active');
-  });
-});
 
 // Array to store reviews
 const reviews = [];
@@ -126,48 +97,3 @@ function handleFormSubmit(event) {
 const reviewForm = document.getElementById('reviewForm');
 reviewForm.addEventListener('submit', handleFormSubmit);
 
-// ... Your existing code ...
-
-// Function to toggle the review form visibility
-function toggleReviewForm() {
-  const reviewForm = document.getElementById('reviewForm');
-  const addReviewButton = document.getElementById('addReviewButton');
-
-  if (reviewForm.style.display === 'block') {
-    reviewForm.style.display = 'none';
-    addReviewButton.innerText = 'Add Review';
-  } else {
-    reviewForm.style.display = 'block';
-    addReviewButton.innerText = 'Cancel';
-  }
-}
-
-// Add an event listener to the "Add Review" button click
-const addReviewButton = document.getElementById('addReviewButton');
-addReviewButton.addEventListener('click', toggleReviewForm);
-
-// Function to handle form submission
-function handleFormSubmit(event) {
-  event.preventDefault();
-
-  // Get the input values
-  const name = document.getElementById('reviewerName').value;
-  const review = document.getElementById('reviewContent').value;
-
-  // Add the review
-  addReview(name, review);
-
-  // Display the updated reviews
-  displayReviews();
-
-  // Clear the input fields after submission
-  document.getElementById('reviewerName').value = '';
-  document.getElementById('reviewContent').value = '';
-
-  // Hide the review form after submission
-  toggleReviewForm();
-}
-
-// Add an event listener to the form submission
-const reviewForm = document.getElementById('reviewForm');
-reviewForm.addEventListener('submit', handleFormSubmit);

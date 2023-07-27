@@ -1,3 +1,68 @@
+// Object that holds information about books
+const books = {
+  'treasure-island': {
+    title: 'Treasure Island',
+    description: 'A classic adventure novel by Robert Louis Stevenson.',
+    cover: 'treasure-island.jpg'
+  },
+  'frankenstein': {
+    title: 'Frankenstein',
+    description: 'A novel written by Mary Shelley, often considered the first science fiction novel.',
+    cover: 'frankenstein.jpg'
+  },
+  'tale-of-two-cities': {
+    title: 'A Tale of Two Cities',
+    description: 'A historical novel by Charles Dickens, set in London and Paris during the French Revolution.',
+    cover: 'tale-of-two-cities.jpg'
+  },
+  'black-beauty': {
+    title: 'Black Beauty',
+    description: 'A novel by Anna Sewell about the life of a horse named Black Beauty.',
+    cover: 'black-beauty.jpg'
+  },
+  'gullivers-travels': {
+    title: "Gulliver's Travels",
+    description: 'A satirical novel by Jonathan Swift, featuring the adventures of Lemuel Gulliver.',
+    cover: 'gullivers-travels.jpg'
+  }
+};
+
+// Function to display book information
+function showBookInfo(bookId) {
+  const book = books[bookId];
+  const bookCover = document.getElementById('bookCover');
+  const bookTitle = document.getElementById('bookTitle');
+  const bookDescription = document.getElementById('bookDescription');
+
+  // Update book information in the DOM elements
+  bookCover.src = book.cover;
+  bookTitle.textContent = book.title;
+  bookDescription.textContent = book.description;
+}
+
+// Function to change the displayed book based on the selected item
+function changeBook(bookId) {
+  showBookInfo(bookId);
+}
+
+// click event listener to each book item in the sidebar
+const bookItems = document.querySelectorAll('.sidebar ul li');
+bookItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    // Get the book ID from the clicked item
+    const bookId = item.id;
+
+    // Change the displayed book
+    changeBook(bookId);
+
+    // Remove 'active' class from all book items
+    bookItems.forEach((item) => item.classList.remove('active'));
+
+    // Add 'active' class to the clicked item to highlight it as selected
+    item.classList.add('active');
+  });
+});
+
 // Array to store reviews
 const reviews = [];
 
@@ -8,9 +73,14 @@ function addReview(name, review) {
     name: name,
     review: review
   };
-
   // Add the review to the reviews array
   reviews.push(reviewObject);
+  // Clear the input fields after submission
+  document.getElementById('reviewerName').value = '';
+  document.getElementById('reviewContent').value = '';
+
+  // Display the reviews
+  displayReviews();
 }
 
 // Function to display reviews
@@ -38,8 +108,8 @@ function handleFormSubmit(event) {
   event.preventDefault();
 
   // Get the input values
-  const name = document.getElementById('name').value;
-  const review = document.getElementById('review').value;
+  const name = document.getElementById('reviewerName').value;
+  const review = document.getElementById('reviewContent').value;
 
   // Add the review
   addReview(name, review);
@@ -48,10 +118,12 @@ function handleFormSubmit(event) {
   displayReviews();
 
   // Clear the input fields after submission
-  document.getElementById('name').value = '';
-  document.getElementById('review').value = '';
+  document.getElementById('reviewerName').value = '';
+  document.getElementById('reviewContent').value = '';
 }
 
 // Add an event listener to the form submission
 const reviewForm = document.getElementById('reviewForm');
 reviewForm.addEventListener('submit', handleFormSubmit);
+
+displayReviews();
